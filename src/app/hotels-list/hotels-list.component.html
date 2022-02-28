@@ -1,0 +1,38 @@
+
+<div style="margin-bottom:10px">
+  <nav class="navbar navbar-light bg-light ">
+      <div class="input-group mb-3 border border-warning border-4 rounded" >
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Filter:</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Default" [(ngModel)]="hotelService.searchFilter" >
+      </div>
+  </nav>
+</div>
+
+
+<div class="row">
+
+  <div *ngFor="let h of hotels">
+      <div class="card mb-3" style="max-width: 100%;">
+          <div class="row  p-3 g-0">
+              <div class="col-md-4">
+                  <img src="/src/assets/img/{{h.img}}" class="img-fluid rounded" alt="{{h.name}}">
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <div class="d-inline-block">
+                          <h5 class="card-title text-primary font-weight-bold">{{h.name}} </h5>
+                          <div>
+                              <app-stars [rating]='h.stars' style="font-size: 11px"></app-stars>
+                          </div>
+                      </div>
+                      <p class="card-text" style="font-size: 12px">{{h.description}}</p>
+                      <p class="card-text"><small class="text-danger">{{h.price | currency }}</small></p>
+                      <button type="submit" id="buyButton" class="btn btn-primary btn-sm" (click)="hotelService.addBookedHotel(h)">Book</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

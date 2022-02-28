@@ -7,9 +7,3 @@
 .products-props {
   font-size: 0.65rem;
 }
-
-ngb-rating {
-  font-size: 100px;
-  color: brown;
-  background: rgba(23, 221, 16, 0.815);
-}

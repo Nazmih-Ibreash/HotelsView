@@ -10,7 +10,7 @@ import { Hotels } from '../shared/Hotels';
 export class HotelsListComponent implements OnInit {
 
   public hotels: Hotels[] = [];
-  public _searchFilter: string = "";
+  public filter: string = "";
   public filteredHotels: Hotels[] = [];
 
   constructor(public hotelService: HotelDataService) {
@@ -25,11 +25,17 @@ export class HotelsListComponent implements OnInit {
     this.GetHotels();
   }
 
+  onSearchChange() {
+    this.GetHotels();
+
+  }
+
   async GetHotels( ): Promise<void> {
 
-    this.hotelService.getHotels().subscribe((item) => {
+    this.hotelService.getHotels(this.filter).subscribe((item) => {
       console.log(item);
       this.hotels = item;
+      this.filteredHotels = item;
 
     });
   }

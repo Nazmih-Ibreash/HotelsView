@@ -15,7 +15,7 @@ export class HotelDataService {
     public hotels: Hotels[] = [];
     public bookedHotels: BookedHotel[] = [];
     public total: number = 0;
-  public filteredHotels: Hotels[] = [];
+    public filteredHotels: Hotels[] = [];
 
   headers = {
 
@@ -29,10 +29,10 @@ export class HotelDataService {
 
   };
 
-    getHotels(): Observable<Hotels[]> {
-        return this.http.get<Hotels[]>("http://localhost:5000/api/hotels")
-            ;
+    getHotels(search: string): Observable<Hotels[]> {
+        return this.http.get<Hotels[]>(`http://localhost:5000/api/hotels/GetHotelByName/${search || ''}`);
     }
+
   /*
   .pipe(map(data => {
                 this.hotels = data;
@@ -65,19 +65,11 @@ export class HotelDataService {
             this.bookedHotels.push(item);
         }
     }
-    public _searchFilter: string = "";
-    public get searchFilter(): string {
-        return this._searchFilter;
-    }
-    public set searchFilter(value: string) {
-        this._searchFilter = value;
-        //console.log('In setter: ', value);
-        this.filteredHotels = this.performFilter(value);
-    }
+
 
     performFilter(filterBy: string): Hotels[] {
         filterBy = filterBy.toLocaleLowerCase();
-        return this.hotels.filter((hotel: Hotels) => hotel.city.toLocaleLowerCase().includes(filterBy));
+      return this.hotels.filter((hotel: Hotels) => hotel.city.toLocaleLowerCase().includes(filterBy));
     }
 
 }

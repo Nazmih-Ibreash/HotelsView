@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
 .startBody ::before {
   display: block;
   content: "";
-  height: 60px;
+  height: 50px;
 }
 html,
 body {

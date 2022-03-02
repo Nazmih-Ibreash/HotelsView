@@ -7,3 +7,35 @@
 .products-props {
   font-size: 0.65rem;
 }
+
+.content {
+  padding: 16px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.hotelName {
+  color: #3f51b5;
+  font-weight: bold;
+}
+
+
+.content > mat-card {
+  width: 200px;
+}
+.price {
+  color: red;
+  font-weight: bold;
+}
+
+.imgCard {
+  height: 230px;
+}
+.contentSpace {
+  margin-top: 5px;
+}
+
+.actionSpace {
+  margin-left: 0.8%;
+}

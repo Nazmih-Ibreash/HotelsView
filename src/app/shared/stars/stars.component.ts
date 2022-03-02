@@ -8,12 +8,12 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 export class StarsComponent implements OnChanges {
 
   @Input() rating!: number;
-  cropWidth: number = 75;
+  cropWidth: number = 120;
 
   constructor() { }
 
   ngOnChanges(): void {
-      this.cropWidth = this.rating * 75 / 5;
+      this.cropWidth = this.rating * 120 / 5;
   }
 
 }

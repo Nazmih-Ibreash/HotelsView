@@ -12,6 +12,7 @@ export class HotelsListComponent implements OnInit {
   public hotels: Hotels[] = [];
   public filter: string = "";
   public filteredHotels: Hotels[] = [];
+  public search!:  string;
 
   constructor(public hotelService: HotelDataService) {
     console.log("hotels");
@@ -25,7 +26,7 @@ export class HotelsListComponent implements OnInit {
     this.GetHotels();
   }
 
-  onSearchChange() {
+  onClick() {
     this.GetHotels();
 
   }

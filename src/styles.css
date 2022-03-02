@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .startBody ::before {
   display: block;
   content: "";
-  height: 50px;
+  height: 70px;
 }
+
 html,
 body {
   height: 100%;
@@ -13,4 +14,5 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #D1D1D1;
 }

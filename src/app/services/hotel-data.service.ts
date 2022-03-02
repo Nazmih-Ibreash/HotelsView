@@ -30,7 +30,7 @@ export class HotelDataService {
   };
 
     getHotels(search: string): Observable<Hotels[]> {
-        return this.http.get<Hotels[]>(`http://localhost:5000/api/hotels/GetHotelByName/${search || ''}`);
+        return this.http.get<Hotels[]>(`http://localhost:5000/api/hotels/${search || ''}`);
     }
 
   /*

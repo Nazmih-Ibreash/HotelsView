@@ -6,7 +6,7 @@ import { HotelDataService } from '../services/hotel-data.service';
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent   {
+export class CheckoutComponent {
 
   constructor(public hotelService: HotelDataService) {
   }
@@ -15,5 +15,10 @@ export class CheckoutComponent   {
     // TODO
     alert("Doing checkout");
   }
+
+  onClick() {
+    this.hotelService.bookedHotels.length;
+  }
+
 
 }

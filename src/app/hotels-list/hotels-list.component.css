@@ -1,3 +1,18 @@
+.form-field {
+  width: 57%;
+  margin-left: 1.2%;
+  margin-bottom: 1%;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+
 .hotel-img {
   border: 1px #ddd solid;
   box-shadow: rgba(0, 0, 0, 0.4) 2px 2px;
@@ -17,12 +32,12 @@
 
 .hotelName {
   color: #3f51b5;
-  font-weight: bold;
+  
 }
 
 
 .content > mat-card {
-  width: 200px;
+  width: 300px;
 }
 .price {
   color: red;

@@ -27,11 +27,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatBadgeModule } from '@angular/material/badge';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { RouterModule, Routes } from '@angular/router';
+
 
 const materialModules = [
+  MatBadgeModule,
   MatGridListModule,
   CdkTreeModule,
   MatAutocompleteModule,
@@ -65,7 +69,9 @@ const materialModules = [
 
 @NgModule({
   imports: [
-    ...materialModules
+    ...materialModules,
+
+    RouterModule,
   ],
   exports: [
     ...materialModules,

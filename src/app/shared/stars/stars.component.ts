@@ -13,7 +13,7 @@ export class StarsComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(): void {
-      this.cropWidth = this.rating * 120 / 5;
+    this.cropWidth = this.rating * 120 / 5;
   }
 
 }

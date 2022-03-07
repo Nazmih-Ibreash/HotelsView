@@ -29,7 +29,7 @@ export class HotelsListComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log('OnChanges');
     console.log(JSON.stringify(changes));
-    if (this.filter == undefined) {
+    if (this.filter == undefined || this.filter == '') {
       this.filter = '';
       this.GetHotels();
     } else {
@@ -42,7 +42,7 @@ export class HotelsListComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   openSnackBar() {
     this._snackBar.open('Your search bar is empty!', 'close', {

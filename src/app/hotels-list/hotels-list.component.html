@@ -1,6 +1,6 @@
 <div class="content">
   <div fxLayout="row wrap" layout-align="center" fxLayoutGap="30px grid">
-    <div fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="50%"  *ngFor="let h of filteredHotels">
+    <div fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let h of filteredHotels">
       <mat-card class="mat-elevation-z4">
         <img mat-card-image class="imgCard" src="../../assets/img/{{h.img}}" alt="{{h.name}}">
         <mat-card-title class="hotelName">{{h.name}}</mat-card-title>
@@ -15,7 +15,6 @@
         </mat-card-content>
         <mat-card-actions class="actionSpace">
           <button mat-raised-button color="primary" (click)="hotelService.addBookedHotel(h)">Book</button>
-
         </mat-card-actions>
       </mat-card>
     </div>

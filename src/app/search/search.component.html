@@ -4,9 +4,8 @@
   <button matSuffix mat-button (click)="sendFilter()">
     <mat-icon matSuffix>search</mat-icon>
   </button>
-  <button *ngIf="filter" matSuffix mat-icon-button (click)="filter=''" (click)="onClose()" routerLink="/hotels">
+  <button *ngIf="filter" matSuffix mat-icon-button (click)="filter=''" (click)="onClose()">
     <mat-icon matSuffix>close</mat-icon>
   </button>
 </mat-form-field>
 <br />
-{{search}}

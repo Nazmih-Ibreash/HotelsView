@@ -13,33 +13,22 @@ import {
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   public filter: string = "";
   public filteredHotels: Hotels[] = [];
   public search!: string;
   @Output() filterEvent: EventEmitter<string> = new EventEmitter();
+  @Output() closeFilterEvent: EventEmitter<void> = new EventEmitter();
+
 
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private _snackBar: MatSnackBar) {
-  }
-
-  ngOnInit(): void {
-  }
+  constructor(private _snackBar: MatSnackBar) {}
 
   sendFilter() {
-    if (this.filter) {
-      this.filterEvent.emit(this.filter);
-    }
-    else {
-      this.openSnackBar();
-    }
-  }
-
-  onClick() {
     if (this.filter) {
       this.filterEvent.emit(this.filter);
     }
@@ -57,6 +46,7 @@ export class SearchComponent implements OnInit {
 
   onClose() {
     this.filter = ''
+    this.closeFilterEvent.emit();
   }
 
 }

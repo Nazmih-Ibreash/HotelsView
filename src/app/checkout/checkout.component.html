@@ -1,8 +1,9 @@
+
 <div class="row">
     <h3>Confirm Order</h3>
     <table class="table table-bordered table-hover">
         <tr *ngFor="let o of hotelService.bookedHotels">
-            <td><img src="/img/{{ o.img }}" alt="o.name" class="img-thumbnail checkout-thumb" /></td>
+            <td><img src="../../assets/img/{{ o.img }}" alt="o.name" class="img-thumbnail checkout-thumb" /></td>
             <td>{{ o.name }}({{ o.city }})</td>
             <td>{{ o.quantity }}</td>
             <td>{{ o.price|currency}}</td>
@@ -29,3 +30,43 @@
     </div>
 
 </div>
+<!-- 
+
+<table mat-table [dataSource]="hotelService.bookedHotels" class="mat-elevation-z8 demo-table">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Hotel Name</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="img">
+        <th mat-header-cell *matHeaderCellDef>Image</th>
+        <td mat-cell *matCellDef="let element">
+            <img src="../../assets/img/{{element.img}}" alt="o.name" />
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Hotel Name</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef>City</th>
+        <td mat-cell *matCellDef="let element">{{element.city}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Persons</th>
+        <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let element">{{element.price |currency}}</td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table>
+    
+-->
+

@@ -7,6 +7,7 @@ import { HotelDataService } from '../services/hotel-data.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent {
+  public columnsToDisplay = ['', 'Hotel Name (City)', 'Persons', 'Price', 'Total'];
 
   constructor(public hotelService: HotelDataService) {
   }
@@ -20,5 +21,8 @@ export class CheckoutComponent {
     this.hotelService.bookedHotels.length;
   }
 
-
+  removeData() {
+    this.hotelService.bookedHotels.pop();
+    //this.hotelService.bookedHotels.renderRows();
+  }
 }

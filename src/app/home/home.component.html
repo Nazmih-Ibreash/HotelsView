@@ -1,2 +1,2 @@
-<app-search (filterEvent)="receiveFilter($event)"></app-search>
+<app-search (filterEvent)="receiveFilter($event)" (closeFilterEvent)="closeSearch()"></app-search>
 <app-hotels-list [filter]="filter"></app-hotels-list>

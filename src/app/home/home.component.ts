@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
     this.filter = search;
   }
 
+  closeSearch() {
+    this.filter = '';
+  }
+
 }
